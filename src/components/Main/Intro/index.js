@@ -5,8 +5,8 @@ import image from "../../../assets/img/avatar.jpg";
 const Intro = () => {
     const [intro, setIntro] = useState({});
     useEffect(() => {
-      const db = getDatabase();
-      const introRef = ref(db, "intro");
+        const db = getDatabase();
+        const introRef = ref(db, "intro");
       onValue(introRef, (snapshot) => {
         const data = snapshot.val();
         setIntro(data);
@@ -20,7 +20,7 @@ const Intro = () => {
           <img className="img-fluid rounded-circle" src={`data:image/jpg;base64,${intro.img}`} />
         </div>
         <p>{intro.p}</p>
-        <a href="#" className="btn btn-outline-success">{intro.hr}</a>
+        <a href="#" className="btn btn-outline-primary">{intro.hr}</a>
       </div>
     </section>  
     </div>
