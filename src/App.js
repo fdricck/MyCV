@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
 
@@ -8,15 +9,8 @@ function App() {
       <div>
         <Header/>
         <Main/>
-    <footer className="page-footer">
-      <div className="container">
-        <div className="social-icons">
-          <a href="https://www.facebook.com/fdrickplgn"><i className="ion-social-facebook" title="Facebook" /></a>
-          <a href="https://www.instagram.com/fdricck/"><i className="ion-social-instagram-outline" title="Instagram" /></a>
-        </div>
+        <Footer/>
       </div>
-    </footer>
-  </div>
     </div>
   );
 };

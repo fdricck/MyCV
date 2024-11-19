@@ -1,4 +1,5 @@
 import React from 'react'
+import image from "../../../assets/img/avatar.jpg";
 
 const Intro = () => {
   return (
@@ -6,7 +7,7 @@ const Intro = () => {
         <section className="cv-block block-intro border-bottom">
       <div className="container">
         <div className="avatar">
-          <img className="img-fluid rounded-circle" src="./assets/img/avatar.jpg" />
+          <img className="img-fluid rounded-circle" src={image} />
         </div>
         <p>Hello! I am <strong>Fredrick Palangan</strong>.I am a student at the Faculty of Computer Science at
           Universitas Klabat, majoring in Informatics. I have
