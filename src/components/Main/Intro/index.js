@@ -1,18 +1,26 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
 import image from "../../../assets/img/avatar.jpg";
 
 const Intro = () => {
+    const [intro, setIntro] = useState({});
+    useEffect(() => {
+      const db = getDatabase();
+      const introRef = ref(db, "intro");
+      onValue(introRef, (snapshot) => {
+        const data = snapshot.val();
+        setIntro(data);
+      });
+    }, []);
   return (
     <div>
         <section className="cv-block block-intro border-bottom">
       <div className="container">
         <div className="avatar">
-          <img className="img-fluid rounded-circle" src={image} />
+          <img className="img-fluid rounded-circle" src={`data:image/jpg;base64,${intro.img}`} />
         </div>
-        <p>Hello! I am <strong>Fredrick Palangan</strong>.I am a student at the Faculty of Computer Science at
-          Universitas Klabat, majoring in Informatics. I have
-          a strong interest in design and web.</p>
-        <a href="#" className="btn btn-outline-success">Hire Me</a>
+        <p>{intro.p}</p>
+        <a href="#" className="btn btn-outline-success">{intro.hr}</a>
       </div>
     </section>  
     </div>
